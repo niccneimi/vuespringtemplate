@@ -30,7 +30,7 @@ public class ItemController {
     public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody Item updatedItem) {
         return itemRepository.findById(id)
                 .map(item -> {
-                    item.setName(updatedItem.getName()); // Assuming Item has a setName method
+                    item.setName(updatedItem.getName());
                     Item savedItem = itemRepository.save(item);
                     return ResponseEntity.ok(savedItem);
                 })
