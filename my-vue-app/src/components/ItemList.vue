@@ -18,7 +18,8 @@
 import axios from 'axios';
 
 export default {
-    data() {
+  name: 'ItemList',
+  data() {
         return {
             items: [],
             newItem: '',
@@ -28,7 +29,7 @@ export default {
     },
     methods: {
         fetchItems() {
-            axios.get('http://localhost:8080/api/items')
+            axios.get('http://localhost:8080/api/items', { headers: {Authorization: localStorage.getItem('token')} })
                 .then(response => {
                     this.items = response.data;
                 })
@@ -37,7 +38,7 @@ export default {
                 });
         },
         addItem() {
-            axios.post('http://localhost:8080/api/items', { name: this.newItem })
+            axios.post('http://localhost:8080/api/items', { name: this.newItem }, { headers: {Authorization: `${localStorage.getItem('token')}`} })
                 .then(response => {
                     this.items.push(response.data);
                     this.newItem = '';
@@ -47,7 +48,7 @@ export default {
                 });
         },
         deleteItem(id) {
-            axios.delete(`http://localhost:8080/api/items/${id}`)
+            axios.delete(`http://localhost:8080/api/items/${id}`, { headers: {Authorization: `${localStorage.getItem('token')}`} })
                 .then(() => {
                     this.items = this.items.filter(item => item.id !== id);
                 })
@@ -63,7 +64,7 @@ export default {
             return this.editingItemId === id;
         },
         updateItem(id) {
-            axios.put(`http://localhost:8080/api/items/${id}`, { name: this.editedItemName })
+            axios.put(`http://localhost:8080/api/items/${id}`, { name: this.editedItemName}, { headers: {Authorization: `${localStorage.getItem('token')}`} })
                 .then(response => {
                     const index = this.items.findIndex(item => item.id === id);
                     if (index !== -1) {
