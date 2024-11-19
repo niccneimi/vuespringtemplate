@@ -1,0 +1,33 @@
+services:
+  backend:
+    <<: &backend
+      image: "backend:dev"
+      build:
+        context: .
+        dockerfile: ./docker/backend/Dockerfile
+      ports:
+        - 8000:8080
+      depends_on:
+        - db
+      networks:
+        - backend-network
+    command: runner
+
+  db:
+    image: "postgres:15.2-alpine"
+    env_file:
+      - ./docker/db/.env
+    volumes:
+      - dev_db_data:/var/lib/postgresql/data
+      - dev_db_data_backups:/backups
+    ports:
+      - 5432:5432
+    networks:
+      - backend-network
+
+volumes:
+  dev_db_data: {}
+  dev_db_data_backups: {}
+
+networks:
+  backend-network:
