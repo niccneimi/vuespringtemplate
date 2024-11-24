@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.tutor_platform.backend.controllers;
 
-import com.example.demo.models.Item;
-import com.example.demo.repositories.ItemRepository;
+import com.tutor_platform.backend.models.Item;
+import com.tutor_platform.backend.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/items")
 public class ItemController {
 

@@ -1,7 +1,7 @@
-package com.example.demo.services;
+package com.tutor_platform.backend.services;
 
-import com.example.demo.models.User;
-import com.example.demo.repositories.UserRepository;
+import com.tutor_platform.backend.models.User;
+import com.tutor_platform.backend.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

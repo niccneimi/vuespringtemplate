@@ -1,7 +1,7 @@
-package com.example.demo.configs;
+package com.tutor_platform.backend.configs;
 
-import com.example.demo.security.JwtAuthenticationFilter;
-import com.example.demo.services.UserService;
+import com.tutor_platform.backend.security.JwtAuthenticationFilter;
+import com.tutor_platform.backend.services.UserService;
 
 import java.util.Arrays;
 

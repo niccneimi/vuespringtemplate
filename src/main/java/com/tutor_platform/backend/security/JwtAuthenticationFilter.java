@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.tutor_platform.backend.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -11,8 +11,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.demo.services.JwtService;
-import com.example.demo.services.UserService;
+import com.tutor_platform.backend.services.JwtService;
+import com.tutor_platform.backend.services.UserService;
 
 import java.io.IOException;
 

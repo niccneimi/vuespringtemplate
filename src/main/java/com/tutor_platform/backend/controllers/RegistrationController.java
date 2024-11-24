@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.tutor_platform.backend.controllers;
 
-import com.example.demo.models.User;
-import com.example.demo.services.RegistrationService;
+import com.tutor_platform.backend.models.User;
+import com.tutor_platform.backend.services.RegistrationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:5173")
 public class RegistrationController {
     private final RegistrationService registrationService;
 

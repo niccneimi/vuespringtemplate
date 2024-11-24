@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.tutor_platform.backend.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

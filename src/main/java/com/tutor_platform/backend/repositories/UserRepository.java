@@ -1,6 +1,6 @@
-package com.example.demo.repositories;
+package com.tutor_platform.backend.repositories;
 
-import com.example.demo.models.User;
+import com.tutor_platform.backend.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

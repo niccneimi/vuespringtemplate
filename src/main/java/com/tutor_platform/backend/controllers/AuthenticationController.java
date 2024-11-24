@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.tutor_platform.backend.controllers;
 
-import com.example.demo.services.JwtService;
-import com.example.demo.services.UserService;
+import com.tutor_platform.backend.services.JwtService;
+import com.tutor_platform.backend.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:5173")
 public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
@@ -27,7 +27,6 @@ public class AuthenticationController {
         this.jwtService = jwtService;
         this.userService = userService;
     }
-
 
     @PostMapping("/api/auth/login")
     public ResponseEntity<String> authenticateUser(@RequestBody AuthenticationRequest authenticationRequest) {
@@ -56,5 +55,4 @@ class AuthenticationRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
